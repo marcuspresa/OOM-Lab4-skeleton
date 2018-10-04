@@ -24,10 +24,10 @@ public class TimeZoneTranslator {
 			day += 1;
 		}
 		if(day > 31) {
-			day -= 31;
+			day -= 30;
 			month++;
 		}
-		if(day < 31) {
+		if(day < 1) {
 			day += 31;
 			month--;
 		}
@@ -35,13 +35,13 @@ public class TimeZoneTranslator {
 			month -= 12;
 			year++;
 		} 
-		if(month < 12) {
+		if(month < 1) {
 			month += 12;
 			year--;
 		}
 		
 		DateTime targetDateTime = new DateTime(year,
-				inputDate.getMonth(),
+				month,
 				day,
 				targetHour,
 				inputDate.getMinute(),
