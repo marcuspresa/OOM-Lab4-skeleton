@@ -12,8 +12,7 @@ public class TimeZoneTranslator {
 		int year = inputDate.getYear();
 		int inputHour = inputDate.getHour();
 		int gmtHour = inputHour - fromOffset;
-		int targetHour = gmtHour + toOffset;
-	
+		int targetHour = gmtHour + toOffset;	
 	
 		if(targetHour < 0) {
 			targetHour += 24;
@@ -24,7 +23,7 @@ public class TimeZoneTranslator {
 			day += 1;
 		}
 		if(day > 31) {
-			day -= 30;
+			day -= 31;
 			month++;
 		}
 		if(day < 1) {
